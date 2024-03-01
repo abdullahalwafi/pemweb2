@@ -1,10 +1,10 @@
 <?php
-if (isset($_POST['submit'])) {
-    $nama = $_POST['nama'];
-    $matakuliah = $_POST['matakuliah'];
-    $nilai_uts = $_POST['nilai_uts'];
-    $nilai_uas = $_POST['nilai_uas'];
-    $nilai_tugas = $_POST['nilai_tugas'];
+if (isset($_REQUEST['submit'])) {
+    $nama = $_REQUEST['nama'];
+    $matakuliah = $_REQUEST['matakuliah'];
+    $nilai_uts = $_REQUEST['nilai_uts'];
+    $nilai_uas = $_GET['nilai_uas'];
+    $nilai_tugas = $_GET['nilai_tugas'];
 
     echo "Nama : $nama <br>";
     echo "Mata Kuliah : $matakuliah <br>";

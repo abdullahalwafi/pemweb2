@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 m-4">
-                <form method="post" action="proses.php">
+                <form method="get" action="proses.php">
                     <div class="form-group row">
                         <label for="nama" class="col-4 col-form-label">Nama</label>
                         <div class="col-8">
