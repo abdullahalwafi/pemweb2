@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <label for="nama" class="col-4 col-form-label">Nama</label>
                         <div class="col-8">
-                            <input id="nama" name="nama" placeholder="masukan nama" type="text" class="form-control" required>
+                            <input id="nama" name="nama" placeholder="masukan nama" type="text" class="form-control" required autofocus>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -35,19 +35,19 @@
                     <div class="form-group row">
                         <label for="nilai_uts" class="col-4 col-form-label">Nilai UTS</label>
                         <div class="col-8">
-                            <input id="nilai_uts" name="nilai_uts" placeholder="masukan nilai_uts" type="number" class="form-control" required>
+                            <input id="nilai_uts" max="100" name="nilai_uts" placeholder="masukan nilai_uts" type="number" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="nilai_uas" class="col-4 col-form-label">Nilai UAS</label>
                         <div class="col-8">
-                            <input id="nilai_uas" name="nilai_uas" placeholder="masukan nilai_uas" type="number" class="form-control" required>
+                            <input id="nilai_uas" max="100" name="nilai_uas" placeholder="masukan nilai_uas" type="number" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="nilai_tugas" class="col-4 col-form-label">Nilai tugas</label>
                         <div class="col-8">
-                            <input id="nilai_tugas" name="nilai_tugas" placeholder="masukan nilai_tugas" type="number" class="form-control" required>
+                            <input id="nilai_tugas" max="100" name="nilai_tugas" placeholder="masukan nilai_tugas" type="number" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row">
