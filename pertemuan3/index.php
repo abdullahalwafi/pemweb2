@@ -1,27 +1,4 @@
-<?php
-$prodi = [
-    "SI" => "Sistem Informasi",
-    "TI" => "Teknik Informatika",
-    "BD" => "Bisnis Digital"
-];
-$skills = [
-    "HTML" => 10,
-    "CSS" => 10,
-    "JavaScript" => 20,
-    "RWD Bootstrap" => 20,
-    "PHP" => 30,
-    "Python" => 30,
-    "Java" => 50,
-];
-$domisili = [
-    "Jakarta",
-    "Bogor",
-    "Depok",
-    "Tangerang",
-    "Bekasi",
-    "lainnya"
-];
-?>
+<?php require_once('vendor/data.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +13,71 @@ $domisili = [
 
 <body>
     <div class="container p-4">
-        <?php if (isset($_POST['nim'])) { ?>
+        <?php
+        if (isset($_POST['nim'])) {
+            $nim = $_POST['nim'];
+            $nama = $_POST['nama'];
+            $email = $_POST['email'];
+            $jeniskelamin = $_POST['jeniskelamin'];
+            $programStudi = $_POST['programStudi'];
+            $domisili = $_POST['domisili'];
+        ?>
+            <table class="table">
+                <tr>
+                    <td>NIM</td>
+                    <td>:</td>
+                    <td><?= $nim ?></td>
+                </tr>
+                <tr>
+                    <td>Nama Lengkap</td>
+                    <td>:</td>
+                    <td><?= $nama ?></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td><?= $email ?></td>
+                </tr>
+                <tr>
+                    <td>Jenis kelamin</td>
+                    <td>:</td>
+                    <td><?= $jeniskelamin ?></td>
+                </tr>
+                <tr>
+                    <td>Program studi</td>
+                    <td>:</td>
+                    <td><?= $programStudi ?></td>
+                </tr>
+                 <tr>
+                <td>MySkill</td>
+                <td>:</td>
+                <td>
+                    <?php
+                    $point = 0;
+                    if (isset($_POST['skills'])) {
+                        foreach ($_POST['skills'] as $skill) {
+                            foreach ($skills as $key => $value) {
+                                if ($skill == $key) {
+                                    $point += $value;
+                                    echo $skill . ",";
+                                }
+                            }
+                        }
+                    }
+                    ?>
+                </td>
+                </tr>
+                <tr>
+                    <td>Point Skill</td>
+                    <td>:</td>
+                    <td><?= $point ?></td>
+                </tr>
+                <tr>
+                    <td>Domisili</td>
+                    <td>:</td>
+                    <td><?= $domisili ?></td>
+                </tr>
+            </table>
         <?php } else { ?>
             <form method="post">
                 <div class="form-group row">
@@ -102,7 +143,7 @@ $domisili = [
                     <label for="skills" class="col-4 col-form-label">Skill Programming</label>
                     <div class="col-8">
                         <?php foreach ($skills as $skillkey => $skillvalue) { ?>
-                            <input type="checkbox" name="skills" id="<?= $skillkey ?>">
+                            <input type="checkbox" name="skills[]" id="<?= $skillkey ?>" value="<?= $skillkey ?>">
                             <label for="<?= $skillkey ?>"><?= $skillkey ?></label>
                         <?php } ?>
                     </div>
