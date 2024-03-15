@@ -6,8 +6,8 @@
  * elseif adalah fungsi untuk melakukan pengecekan kondisi jika kondisi sebelumnya tidak terpenuhi
  */
 
-$nilai = 99;
-if ($nilai >= 80 and $nilai < 95) {
+$nilai = 90;
+if ($nilai >= 80 or $nilai < 95) {
     echo 'Nilai anda ' . $nilai . ' dan anda lulus';
 } elseif($nilai >= 95){
     echo 'Nilai anda ' . $nilai . ' dan anda lulus anda keren!';
