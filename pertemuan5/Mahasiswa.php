@@ -22,6 +22,3 @@ class Mahasiswa
         echo "Tahun Angkatan Mahasiswa : " . $this->tahunAngkatan . "<br>";
     }
 }
-
-$mahasiswa1 = new Mahasiswa("0110222103", "Abdullah AL Wafi", "Teknik Informatika", 2022);
-$mahasiswa1->getInfo();
