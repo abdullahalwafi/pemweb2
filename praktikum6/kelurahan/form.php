@@ -1,3 +1,19 @@
+<?php
+require_once('../dbkoneksi.php');
+$nama = "";
+$kec_id = "";
+$type = "";
+if (isset($_GET['type']) && $_GET['type'] == 'edit') {
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM kelurahan WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $id]);
+    $row = $stmt->fetch();
+    $nama = $row['nama'];
+    $kec_id = $row['kec_id'];
+    $type = 'edit';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
