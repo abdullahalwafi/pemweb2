@@ -10,6 +10,7 @@
 
 <body>
     <div class="container pt-3">
+        <a href="form.php">tambah</a>
         <table class="table">
             <thead>
                 <tr>
@@ -31,8 +32,8 @@
                         <td><?= $row['nama'] ?></td>
                         <td><?= $row['kec_id'] ?></td>
                         <td>
-                            <a href="form.php?id=<?= $row['id'] ?>type=edit">edit</a>
-                            <a href="delete.php?id=<?= $row['id'] ?>">delete</a>
+                            <a href="form.php?id=<?= $row['id'] ?>&type=edit">edit</a>
+                            <a href="aksi.php?id=<?= $row['id'] ?>&delete=delete">delete</a>
                         </td>
                     </tr>
 

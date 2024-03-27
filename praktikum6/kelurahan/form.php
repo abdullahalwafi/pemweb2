@@ -30,13 +30,18 @@ if (isset($_GET['type']) && $_GET['type'] == 'edit') {
         <form action="aksi.php" method="post">
             <div class="form-group mb-3">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" required>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?= $nama ?>" required>
             </div>
             <div class="form-group mb-3">
                 <label for="kec_id">Kec_id</label>
-                <input type="number" class="form-control" id="kec_id" name="kec_id" required>
+                <input type="number" class="form-control" id="kec_id" name="kec_id" value="<?= $kec_id ?>" required>
             </div>
-            <input type="hidden" name="type" value="edit">
+            <?php 
+            if (isset($_GET['id'])) {?>
+                <input type="hidden" name="id" value="<?= $_GET['id']?>">
+            <?php }
+            ?>
+            <input type="hidden" name="type" value="<?= $type ?>">
             <button type="submit" class="btn btn-primary btn-sm">Submit</button>
         </form>
     </div>
