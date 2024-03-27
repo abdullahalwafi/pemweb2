@@ -14,7 +14,7 @@ class Mahasiswa
         $this->tahunAngkatan = $tahunAngkatan;
     }
 
-    public function getInfo()
+    protected function getInfo()
     {
         echo "NIM Mahasiswa : " . $this->nim . "<br>";
         echo "Nama Mahasiswa : " . $this->name . "<br>";

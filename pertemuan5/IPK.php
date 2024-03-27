@@ -14,6 +14,21 @@ class IPK extends Mahasiswa
     {
         parent::getInfo();
         echo "IPK mahasiswa : ". $this->ipk . "<br>";
+        echo "Predikat Mahasiswa : " . $this->predikat();
+    }
+    public function predikat()
+    {
+        if ($this->ipk < 2.0) {
+            return "Cukup";
+        } elseif ($this->ipk >= 2.0 and $this->ipk < 3.0) {
+            return "Baik";
+        } elseif ($this->ipk >= 3.0 and $this->ipk < 3.75) {
+            return "Memuaskan";
+        } elseif ($this->ipk >= 3.75) {
+            return "Cum Laude";
+        }else {
+            return "error!";
+        }
     }
 }
 $mahasiswa2 = new IPK("0110222103", "Abdullah AL Wafi", "Teknik Informatika", 2022, 3.8);
