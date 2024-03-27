@@ -1,4 +1,4 @@
-<?php 
+<?php
 $host = "localhost";
 $db = "dbpuskesmas";
 $user = "root";
@@ -12,6 +12,11 @@ $opt = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
-
-$pdo = new PDO($dsn, $user, $pass, $opt);
-?>
+try {
+    $dbh = new PDO($dsn, $user, $pass, $opt); // 2. buat koneksi
+    if ($dbh) {
+        echo "Koneksi database sukses !!!";
+    }
+} catch (PDOException $e) {
+    echo $e->getMessage();
+}
