@@ -20,7 +20,25 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <tr>
+                    <?php
+                    require_once('../dbkoneksi.php');
+                    $sql = "SELECT * FROM kelurahan";
+                    $query = $pdo->query($sql);
+                    $nomor = 1;
+                    foreach ($query as $row) { ?>
+                        <td><?= $nomor++ ?></td>
+                        <td><?= $row['nama'] ?></td>
+                        <td><?= $row['kec_id'] ?></td>
+                        <td>
+                            <a href="edit.php?id=<?= $row['id'] ?>">edit</a>
+                            <a href="delete.php?id=<?= $row['id'] ?>">delete</a>
+                        </td>
+                    <?php
+                    }
+                    ?>
+                </tr>
+
             </tbody>
         </table>
     </div>

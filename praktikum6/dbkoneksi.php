@@ -13,9 +13,9 @@ $opt = [
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
 try {
-    $dbh = new PDO($dsn, $user, $pass, $opt); // 2. buat koneksi
-    if ($dbh) {
-        echo "Koneksi database sukses !!!";
+    $pdo = new PDO($dsn, $user, $pass, $opt); // 2. buat koneksi
+    if ($pdo) {
+        // echo "Koneksi database sukses !!!";
     }
 } catch (PDOException $e) {
     echo $e->getMessage();
